@@ -1,8 +1,9 @@
 var express = require("express");
-var burger = require("../models/burger.js");
 var router = express.Router();
+var burger = require("../models/burger.js");
 
 router.get("/", function (req, res) {
+
     var info = {
         brgr: [],
         itm: []
@@ -13,20 +14,7 @@ router.get("/", function (req, res) {
             info.brgr.push(data[i]);
         }
 
-        burger.getMenu(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                info.itm.push(data[i]);
-            }
-
-            res.render("index", info);
-        });
-    });
-});
-
-
-router.get("/menu", function (req, res) {
-    burger.getMenu(function (data) {
-        res.render("restaurantMenu", { itm: data });
+        res.render("index", info);
     });
 });
 
