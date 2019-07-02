@@ -1,0 +1,9 @@
+body {
+    background: url("../images/burger.jpg");
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+  }
+  
+  .card {
+    padding: 2px;
+  };
